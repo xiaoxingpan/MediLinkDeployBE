@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar MediLink.jar
+COPY --from=build /target/MediLink-0.0.1-SNAPSHOT.jar MediLink.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","MediLink.jar"]
